@@ -7,8 +7,13 @@
     "build": "vue-cli-service build --target lib --name jdm-element --dest lib src/main.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "//wb": "导出webpack配置",
     "inspect": "vue-cli-service inspect > webpack.config.js",
     "report": "vue-cli-service build --report",
+    "//vuepress": "vuepress 生成与启动 S",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "//release": "版本发布",
     "release:major": "standard-version \"--release-as\" \"major\"",
     "release:minor": "standard-version \"--release-as\" \"minor\"",
     "release:patch": "standard-version \"--release-as\" \"patch\"",
@@ -38,7 +43,8 @@
     "lint-staged": "^8.1.5",
     "prettier": "^1.18.2",
     "standard-version": "^7.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.1.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
