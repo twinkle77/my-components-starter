@@ -22,3 +22,4 @@ yarn-error.log*
 
 # add
 /webpack.config.js
+/lib
