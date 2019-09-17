@@ -7,6 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "inspect": "vue-cli-service inspect > webpack.config.js",
+    "report": "vue-cli-service build --report",
     "release:major": "standard-version \"--release-as\" \"major\"",
     "release:minor": "standard-version \"--release-as\" \"minor\"",
     "release:patch": "standard-version \"--release-as\" \"patch\"",
