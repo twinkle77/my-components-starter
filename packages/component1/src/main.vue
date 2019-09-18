@@ -1,15 +1,15 @@
 <template>
-  <div>test - component</div>
+  <div>test - component1</div>
 </template>
 
 <script>
 export default {
-  name: 'TestComponent'
+  name: 'TestComponent1'
 }
 </script>
 
 <style lang="less" scoped>
 div {
-  color: red;
+  color: blue;
 }
 </style>
