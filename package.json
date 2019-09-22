@@ -4,7 +4,7 @@
   "scripts": {
     "build": "node ./build/buildLib.js",
     "lint": "vue-cli-service lint src packages",
-    "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit",
     "build:entry": "node ./build/buildEntry.js",
     "serve": "vue-cli-service serve",
     "// webpack": "导出webpack配置 S",
@@ -53,7 +53,7 @@
     "vuepress": "^1.1.0"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "yarn run test && lint-staged"
   },
   "lint-staged": {
     "*.{js,vue}": [
