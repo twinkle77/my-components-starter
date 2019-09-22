@@ -1,6 +1,11 @@
 {
   "name": "vue-components",
   "version": "0.1.0",
+  "description": "业务组件库",
+  "main": "lib/vue-components.common.js",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "build": "node ./build/buildLib.js",
     "lint": "vue-cli-service lint src packages",
