@@ -13,4 +13,4 @@ const content = entryTemplate({
   tip
 })
 
-fs.writeFileSync(path.join(__dirname, '../src/index.js'), content)
+fs.writeFileSync(path.join(__dirname, '../src/main.js'), content)

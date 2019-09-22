@@ -22,7 +22,7 @@ const tasks = components.map(name => {
 const packageName = require('../package.json').name
 tasks.unshift({
   name: packageName,
-  entry: `${rootPath}/src/index.js`,
+  entry: `${rootPath}/src/main.js`,
   dest: `${rootPath}/lib`
 })
 
