@@ -2,7 +2,6 @@
   "name": "vue-components",
   "version": "0.1.0",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name component --dest lib/component packages/component/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "// webpack": "导出webpack配置 S",
@@ -20,7 +19,9 @@
     "cz": "git cz"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "core-js": "^2.6.5",
+    "shelljs": "^0.8.3",
     "uppercamelcase": "^3.0.0",
     "vue": "^2.6.10"
   },
