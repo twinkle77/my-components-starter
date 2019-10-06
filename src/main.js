@@ -1,10 +1,9 @@
 // This file is auto gererated by build/buildEntry.js
-import Component from '../packages/component'
-import Component1 from '../packages/component1'
+import Copy from '../packages/copy'
 
 import locale from '@/locale'
 
-const components = [Component, Component1]
+const components = [Copy]
 
 const install = function(Vue, opts = {}) {
   locale.use(opts.locale)
@@ -21,6 +20,5 @@ export default {
   locale: locale.use,
   i18n: locale.i18n,
   install,
-  Component,
-  Component1
+  Copy
 }

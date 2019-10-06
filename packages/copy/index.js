@@ -5,6 +5,4 @@ Component1.install = function(Vue) {
   Vue.component(Component1.name, Component1)
 }
 
-console.log('com1')
-
 export default Component1

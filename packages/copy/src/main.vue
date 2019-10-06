@@ -1,10 +1,10 @@
 <template>
-  <div>test - component1</div>
+  <div>复制组件（示例）</div>
 </template>
 
 <script>
 export default {
-  name: 'TestComponent1'
+  name: 'jdmCopy'
 }
 </script>
 
