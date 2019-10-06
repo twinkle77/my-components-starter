@@ -5,19 +5,22 @@
   "main": "lib/vue-components.common.js",
   "module": "lib/vue-components.umd.min.js",
   "files": [
-    "lib/*"
+    "lib",
+    "src",
+    "packages"
   ],
   "scripts": {
-    "build": "node ./build/buildLib.js",
+    "build": "node ./build/buildLib.js && yarn run build:utils",
     "lint": "vue-cli-service lint src packages",
     "test": "vue-cli-service test:unit",
     "build:entry": "node ./build/buildEntry.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/main.js",
     "serve": "vue-cli-service serve",
     "// webpack": "导出webpack配置 S",
     "inspect": "vue-cli-service inspect > webpack.config.js",
     "report": "vue-cli-service build --report",
     "// vuepress": "vuepress 生成与启动 S",
-    "dev": "vuepress dev docs",
+    "dev": "yarn run build:entry && vuepress dev docs",
     "docs:build": "vuepress build docs",
     "// release": "版本发布 S",
     "release": "sh build/release.sh",
@@ -29,13 +32,11 @@
     "cz": "git cz"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "core-js": "^2.6.5",
-    "shelljs": "^0.8.3",
-    "uppercamelcase": "^3.0.0",
-    "vue": "^2.6.10"
+    "core-js": "^2.6.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-unit-jest": "^3.11.0",
@@ -45,7 +46,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "chalk": "^2.4.2",
     "commitizen": "^4.0.3",
+    "cross-env": "^6.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
@@ -54,7 +58,9 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.18.2",
+    "shelljs": "^0.8.3",
     "standard-version": "^7.0.0",
+    "uppercamelcase": "^3.0.0",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.1.0"
   },
@@ -71,5 +77,8 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
   }
 }
