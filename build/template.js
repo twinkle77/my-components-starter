@@ -12,9 +12,13 @@ function entryTemplate({ tip, components, version }) {
     // ${tip}
     ${importComponentStr.join('\n    ')}
 
+    import locale from '@/locale'
+
     const components = [${compNames.toString()}]
 
-    const install = function(Vue) {
+    const install = function(Vue, opts = {}) {
+      locale.use(opts.locale)
+      locale.i18n(opts.i18n)
       components.forEach(component => Vue.component(component.name, component))
     }
 
@@ -24,6 +28,8 @@ function entryTemplate({ tip, components, version }) {
 
     export default {
       version: '${version}',
+      locale: locale.use,
+      i18n: locale.i18n,
       install,
       ${compNames.join(',\n      ')}
     }

@@ -8,10 +8,12 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@packages/(.*)$': '<rootDir>/packages/$1'
+    '^@packages/(.*)$': '<rootDir>/packages/$1',
+    '\\.css$': '<rootDir>/tests/styleMock.js'
   },
   snapshotSerializers: ['jest-serializer-vue'],
   testMatch: ['**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'],
   testURL: 'http://localhost/',
-  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname']
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  setupFiles: ['<rootDir>/tests/setup.js']
 }
