@@ -1,9 +1,10 @@
 const config = require('./build/config.js')
 
 module.exports = {
-  presets: ['@vue/app'],
   env: {
-    // npm scripts使用的环境
+    production: {
+      presets: ['@vue/app']
+    },
     utils: {
       presets: [['@babel/preset-env', { modules: 'umd' }]],
       // 别名替换
@@ -16,7 +17,8 @@ module.exports = {
               '@': `${config.scopeName}/lib`
             }
           }
-        ]
+        ],
+        ['@babel/plugin-transform-runtime']
       ]
     }
   }
